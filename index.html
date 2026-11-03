@@ -1,0 +1,1325 @@
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manuel Veronese | Analista en Sistemas &amp; Full-Stack Developer</title>
+    <meta name="description" content="Portfolio profesional de Manuel Veronese, Analista en Sistemas y Desarrollador Full-Stack especializado en arquitectura de software, modelado UML y desarrollo de soluciones punta a punta." />
+    <meta property="og:title" content="Manuel Veronese | Analista en Sistemas &amp; Full-Stack Developer" />
+    <meta property="og:description" content="Portfolio profesional de Manuel Veronese, Analista en Sistemas y Desarrollador Full-Stack especializado en arquitectura de software, modelado UML y desarrollo de soluciones punta a punta." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Google Fonts: Instrument Serif (Display editorial), Syne (Geométrico bold), Plus Jakarta Sans (Cuerpo técnico), JetBrains Mono (Código y metadatos) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Syne:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Prevención de destello de tema (FOUC) -->
+    <script>
+      (function () {
+        const saved = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (saved === 'dark' || (!saved && prefersDark)) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      })();
+    </script>
+
+    <!-- Tailwind CSS CDN con paleta editorial + acentos vibrantes -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              linen: '#F9F8F6',
+              parchment: '#F2EFEB',
+              sand: '#E2DDD5',
+              'sand-light': '#ECE8E1',
+              espresso: '#1E1B18',
+              taupe: '#68625B',
+              // Paleta Grafito Profundo & Marfil Editorial (Modo Oscuro)
+              grafito: {
+                950: '#0C0B0A',
+                900: '#121110',
+                850: '#181615',
+                800: '#1E1C1A',
+                750: '#252320',
+                700: '#2F2B26',
+                600: '#3D3832',
+              },
+              marfil: {
+                50: '#FCFAF7',
+                100: '#F5F2EB',
+                200: '#EBE6DC',
+                300: '#D5CDBF',
+                muted: '#9E978E',
+              },
+              // Acentos vibrantes equilibrados (inspirados en marco.fyi & succinct.xyz)
+              tangerine: {
+                50: '#FFF7ED',
+                100: '#FFEDD5',
+                200: '#FED7AA',
+                300: '#FDBA74',
+                400: '#FB923C',
+                500: '#F97316',
+                600: '#EA580C',
+                700: '#C2410C',
+                800: '#9A3412',
+                900: '#7C2D12',
+                950: '#431407',
+              },
+              cobalt: {
+                50: '#EFF6FF',
+                100: '#DBEAFE',
+                200: '#BFDBFE',
+                300: '#93C5FD',
+                400: '#60A5FA',
+                500: '#3B82F6',
+                600: '#2563EB',
+                700: '#1D4ED8',
+                800: '#1E40AF',
+                900: '#1E3A8A',
+                950: '#172554',
+              },
+              emerald: {
+                50: '#ECFDF5',
+                100: '#D1FAE5',
+                200: '#A7F3D0',
+                300: '#6EE7B7',
+                400: '#34D399',
+                500: '#10B981',
+                600: '#059669',
+                700: '#047857',
+                800: '#065F46',
+                900: '#064E3B',
+                950: '#022C22',
+              },
+              violet: {
+                50: '#F5F3FF',
+                100: '#EDE9FE',
+                200: '#DDD6FE',
+                300: '#C4B5FD',
+                400: '#A78BFA',
+                500: '#8B5CF6',
+                600: '#7C3AED',
+                700: '#6D28D9',
+                800: '#5B21B6',
+                900: '#4C1D95',
+                950: '#2E1065',
+              },
+              crimson: {
+                50: '#FFF1F2',
+                100: '#FFE4E6',
+                200: '#FECDD3',
+                300: '#FDA4AF',
+                400: '#FB7185',
+                500: '#F43F5E',
+                600: '#E11D48',
+                700: '#BE123C',
+                800: '#9F1239',
+                900: '#881337',
+                950: '#4C0519',
+              },
+            },
+            fontFamily: {
+              display: ['"Instrument Serif"', 'Georgia', 'serif'],
+              syne: ['Syne', 'sans-serif'],
+              sans: ['"Plus Jakarta Sans"', 'Inter', 'system-ui', 'sans-serif'],
+              mono: ['"JetBrains Mono"', 'Fira Code', 'Consolas', 'monospace'],
+            },
+            animation: {
+              'marquee': 'marquee 25s linear infinite',
+              'marquee-reverse': 'marquee-reverse 25s linear infinite',
+              'pulse-fast': 'pulse 1.8s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            },
+            keyframes: {
+              marquee: {
+                '0%': { transform: 'translateX(0%)' },
+                '100%': { transform: 'translateX(-50%)' },
+              },
+              'marquee-reverse': {
+                '0%': { transform: 'translateX(-50%)' },
+                '100%': { transform: 'translateX(0%)' },
+              },
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      /* Navegación y desplazamiento fluido nativo */
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 5.5rem;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+      }
+
+      ::selection {
+        background-color: #ffd6c4;
+        color: #1e1b18;
+      }
+      html.dark ::selection {
+        background-color: #433327;
+        color: #f5f2eb;
+      }
+
+      body {
+        background-color: #f9f8f6;
+        color: #1e1b18;
+        font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+        text-rendering: optimizeLegibility;
+        transition: background-color 0.25s ease, color 0.25s ease;
+      }
+      html.dark body {
+        background-color: #121110;
+        color: #f5f2eb;
+      }
+
+      /* Animaciones interactivas estilo danielsun.space */
+      .tilt-card {
+        transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.2s ease, border-color 0.2s ease, background-color 0.25s ease;
+        transform-style: preserve-3d;
+        will-change: transform;
+      }
+      .tilt-card:hover {
+        box-shadow: 0 16px 36px -10px rgba(30, 27, 24, 0.08), 0 0 0 1px rgba(30, 27, 24, 0.06);
+      }
+      html.dark .tilt-card:hover {
+        box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(245, 242, 235, 0.08);
+      }
+
+      /* Animación de entrada suave al hacer scroll (Fade-in + Desplazamiento vertical) */
+      .scroll-reveal {
+        opacity: 0;
+        transform: translateY(28px);
+        transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease, border-color 0.2s ease, background-color 0.25s ease;
+        will-change: opacity, transform;
+      }
+      .scroll-reveal.is-revealed {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .scroll-reveal.is-revealed.interactive {
+        transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.2s ease, border-color 0.2s ease, background-color 0.25s ease;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .scroll-reveal {
+          opacity: 1 !important;
+          transform: none !important;
+          transition: none !important;
+        }
+      }
+
+      /* Ticker continuo */
+      .marquee-container {
+        display: flex;
+        overflow: hidden;
+        user-select: none;
+        mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+      }
+
+      /* Navbar Dejan.works style capsule */
+      .capsule-nav {
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+      }
+
+      /* Ocultar barra de scroll horizontal en navbar pero permitir desplazamiento táctil */
+      .no-scrollbar::-webkit-scrollbar {
+        display: none !important;
+        width: 0 !important;
+        height: 0 !important;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none !important;
+        scrollbar-width: none !important;
+      }
+      .scroll-touch {
+        -webkit-overflow-scrolling: touch;
+      }
+
+      /* Estados de la navbar: Tono suave para la sección activa y sombreado para las inactivas */
+      .nav-pill {
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
+      }
+      .nav-item-active {
+        background-color: rgba(226, 220, 210, 0.85) !important;
+        color: #1e1b18 !important;
+        font-weight: 700 !important;
+        border-color: rgba(184, 177, 166, 0.75) !important;
+        box-shadow: 0 1px 3px rgba(30, 27, 24, 0.06);
+        opacity: 1 !important;
+      }
+      html.dark .nav-item-active {
+        background-color: rgba(47, 43, 38, 0.9) !important;
+        color: #f5f2eb !important;
+        font-weight: 700 !important;
+        border-color: rgba(74, 68, 61, 0.8) !important;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+        opacity: 1 !important;
+      }
+
+      .nav-item-inactive {
+        background-color: transparent !important;
+        border-color: transparent !important;
+        color: #8c827a !important;
+        opacity: 0.45 !important;
+      }
+      html.dark .nav-item-inactive {
+        background-color: transparent !important;
+        border-color: transparent !important;
+        color: #a8a196 !important;
+        opacity: 0.4 !important;
+      }
+      .nav-item-inactive:hover {
+        opacity: 0.95 !important;
+        color: #1e1b18 !important;
+      }
+      html.dark .nav-item-inactive:hover {
+        opacity: 0.95 !important;
+        color: #f5f2eb !important;
+      }
+
+      /* Estado del botón DISPONIBLE (Presentación / Hero) */
+      .nav-disp-active {
+        background-color: rgba(209, 250, 229, 0.9) !important;
+        color: #065f46 !important;
+        border-color: rgba(110, 231, 183, 0.9) !important;
+        opacity: 1 !important;
+        font-weight: 700 !important;
+        box-shadow: 0 1px 3px rgba(16, 185, 129, 0.12);
+      }
+      html.dark .nav-disp-active {
+        background-color: rgba(6, 78, 59, 0.55) !important;
+        color: #6ee7b7 !important;
+        border-color: rgba(4, 120, 87, 0.8) !important;
+        opacity: 1 !important;
+        font-weight: 700 !important;
+      }
+
+      .nav-disp-inactive {
+        background-color: rgba(236, 253, 245, 0.35) !important;
+        color: rgba(4, 120, 87, 0.65) !important;
+        border-color: rgba(167, 243, 208, 0.35) !important;
+        opacity: 0.5 !important;
+      }
+      html.dark .nav-disp-inactive {
+        background-color: rgba(6, 78, 59, 0.2) !important;
+        color: rgba(110, 231, 183, 0.6) !important;
+        border-color: rgba(6, 95, 70, 0.3) !important;
+        opacity: 0.45 !important;
+      }
+      .nav-disp-inactive:hover {
+        opacity: 0.95 !important;
+      }
+
+      /* Scrollbar minimal */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f9f8f6;
+      }
+      html.dark ::-webkit-scrollbar-track {
+        background: #121110;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #e2ddd5;
+        border-radius: 9999px;
+      }
+      html.dark ::-webkit-scrollbar-thumb {
+        background: #2f2b26;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #68625b;
+      }
+      html.dark ::-webkit-scrollbar-thumb:hover {
+        background: #4a443d;
+      }
+    </style>
+  </head>
+
+  <body class="bg-linen dark:bg-grafito-900 text-espresso dark:text-marfil-100 font-sans antialiased min-h-screen flex flex-col relative overflow-x-hidden">
+    <!-- Ambient subtle background glow accents -->
+    <div class="fixed top-0 left-1/4 w-96 h-96 bg-tangerine-500/5 dark:bg-tangerine-500/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
+    <div class="fixed top-1/2 right-10 w-96 h-96 bg-cobalt-500/5 dark:bg-cobalt-500/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
+    <div class="fixed bottom-10 left-10 w-80 h-80 bg-violet-500/5 dark:bg-violet-500/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
+
+    <!-- ============================================================== -->
+    <!-- NAVBAR FLOTANTE ESTILO DEJAN.WORKS (Pill Capsule Navbar)        -->
+    <!-- ============================================================== -->
+    <div class="fixed top-2.5 sm:top-6 left-0 right-0 z-50 flex justify-center px-2 sm:px-4 pointer-events-none">
+      <nav
+        id="navbar"
+        class="capsule-nav pointer-events-auto flex items-center gap-1 sm:gap-2 px-2.5 py-1.5 sm:px-4 sm:py-2.5 bg-white/92 dark:bg-grafito-900/95 border border-sand/90 dark:border-grafito-700 shadow-[0_8px_32px_rgba(30,27,24,0.08)] dark:shadow-[0_8px_32px_rgba(0,0,0,0.5)] rounded-full text-xs font-mono transition-all duration-300 hover:border-espresso/30 dark:hover:border-marfil-300/40 max-w-[calc(100vw-1rem)] sm:max-w-max overflow-x-auto no-scrollbar scroll-touch whitespace-nowrap"
+      >
+        <!-- Pill de Disponibilidad Activa con pulsación verde -->
+        <a
+          href="#presentacion"
+          id="nav-link-presentacion"
+          class="nav-pill nav-disp-active shrink-0 flex items-center gap-1.5 px-2.5 py-1.5 rounded-full border text-[11px] font-semibold tracking-wide transition-all duration-200 cursor-pointer"
+          title="Estado: Activo / Disponible"
+        >
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse-fast shrink-0"></span>
+          <span>DISPONIBLE</span>
+        </a>
+
+        <span class="w-px h-3.5 bg-sand/80 dark:bg-grafito-700 shrink-0"></span>
+
+        <!-- Links Rápidos con Texto Completo (deslizable horizontalmente en mobile) -->
+        <a
+          href="#proyectos"
+          id="nav-link-proyectos"
+          class="nav-pill nav-item-inactive shrink-0 px-3 py-1.5 rounded-full border border-transparent text-xs transition-all duration-200 flex items-center justify-center cursor-pointer"
+          title="Proyectos Destacados"
+        >
+          <span>Proyectos</span>
+        </a>
+        <a
+          href="#metodologia"
+          id="nav-link-metodologia"
+          class="nav-pill nav-item-inactive shrink-0 px-3 py-1.5 rounded-full border border-transparent text-xs transition-all duration-200 flex items-center justify-center cursor-pointer"
+          title="Enfoque Metodológico &amp; Competencias"
+        >
+          <span>Metodología</span>
+        </a>
+        <a
+          href="#contacto"
+          id="nav-link-contacto"
+          class="nav-pill nav-item-inactive shrink-0 px-3 py-1.5 rounded-full border border-transparent text-xs transition-all duration-200 flex items-center justify-center cursor-pointer"
+          title="Contacto y Disponibilidad"
+        >
+          <span>Contacto</span>
+        </a>
+
+        <span class="hidden md:inline w-px h-3.5 bg-sand/80 dark:bg-grafito-700 shrink-0"></span>
+
+        <!-- Reloj local en tiempo real (Buenos Aires) -->
+        <div class="hidden md:flex items-center gap-1.5 text-[11px] text-taupe dark:text-marfil-muted px-1 shrink-0">
+          <span class="text-tangerine-600 dark:text-tangerine-400 font-bold">BUE</span>
+          <span id="nav-clock" class="font-mono">--:--</span>
+        </div>
+
+        <span class="w-px h-3.5 bg-sand/80 dark:bg-grafito-700 shrink-0"></span>
+
+        <!-- Selector Modo Oscuro (Grafito) / Claro (Lino) -->
+        <button
+          id="theme-toggle-btn"
+          type="button"
+          onclick="toggleTheme()"
+          aria-label="Alternar entre modo Lino y modo Grafito"
+          class="flex items-center justify-center p-1.5 sm:px-2.5 sm:py-1.5 rounded-full border border-sand dark:border-grafito-700 bg-parchment/70 dark:bg-grafito-800 text-espresso dark:text-marfil-100 hover:border-espresso/40 dark:hover:border-marfil-200 active:scale-95 transition-all text-[11px] cursor-pointer shrink-0"
+          title="Alternar entre modo Lino y modo Grafito"
+        >
+          <!-- Icono Luna (visible en modo claro para cambiar a grafito) -->
+          <svg class="w-3.5 h-3.5 block dark:hidden text-espresso" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+          </svg>
+          <!-- Icono Sol (visible en modo oscuro para cambiar a lino) -->
+          <svg class="w-3.5 h-3.5 hidden dark:block text-amber-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2"></path>
+            <path d="M12 20v2"></path>
+            <path d="m4.93 4.93 1.41 1.41"></path>
+            <path d="m17.66 17.66 1.41 1.41"></path>
+            <path d="M2 12h2"></path>
+            <path d="M20 12h2"></path>
+            <path d="m6.34 17.66-1.41 1.41"></path>
+            <path d="m19.07 4.93-1.41 1.41"></path>
+          </svg>
+        </button>
+
+        <!-- Botón de Acción Directo: Copiar Email -->
+        <button
+          type="button"
+          id="nav-copy-btn"
+          onclick="copyEmail('manuelveronese7@gmail.com')"
+          class="flex items-center justify-center gap-1.5 px-3 py-1.5 sm:px-3.5 sm:py-1.5 rounded-full bg-espresso dark:bg-marfil-100 text-linen dark:text-grafito-900 hover:bg-tangerine-600 dark:hover:bg-tangerine-500 dark:hover:text-white active:scale-95 transition-all text-xs font-medium tracking-tight shadow-xs cursor-pointer shrink-0"
+          title="Copiar email al portapapeles"
+          aria-label="Copiar email de contacto al portapapeles"
+        >
+          <span id="nav-copy-icon" class="flex items-center justify-center">
+            <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+            </svg>
+          </span>
+          <span id="nav-copy-text" class="text-[11px] font-semibold whitespace-nowrap">Copiar Email</span>
+        </button>
+      </nav>
+    </div>
+
+    <!-- Contenido Principal -->
+    <main class="flex-grow max-w-5xl mx-auto px-4 sm:px-8 pt-20 sm:pt-28 pb-20 w-full space-y-14 sm:space-y-24">
+
+      <!-- ============================================================== -->
+      <!-- SECCIÓN A: HERO - PANTALLA COMPLETA & CENTRADA (100% VIEWPORT) -->
+      <!-- ============================================================== -->
+      <section
+        id="presentacion"
+        class="min-h-[calc(100dvh-5.5rem)] sm:min-h-[calc(100dvh-7.5rem)] flex flex-col justify-between py-2 sm:py-6"
+      >
+        <!-- Tag Superior de Expediente Técnico & Coordenadas (Más compacto y sutil en mobile) -->
+        <div class="flex flex-wrap items-center justify-between gap-1.5 sm:gap-2 text-[9px] sm:text-xs font-mono text-taupe dark:text-marfil-muted border-b border-sand dark:border-grafito-700 pb-2 sm:pb-4">
+          <div class="flex items-center gap-1.5 sm:gap-2">
+            <span class="px-1.5 py-0.5 sm:px-2 sm:py-0.5 rounded-xs bg-tangerine-50 dark:bg-tangerine-950/40 text-tangerine-700 dark:text-tangerine-300 border border-tangerine-200 dark:border-tangerine-800/60 font-bold text-[9px] sm:text-xs">
+              SYS // 2026
+            </span>
+            <span class="text-espresso dark:text-marfil-100 font-semibold tracking-tight text-[9px] sm:text-xs">ARQUITECTURA &amp; INGENIERÍA DE SOFTWARE</span>
+          </div>
+          <div class="text-[8px] sm:text-[11px] tracking-wider text-taupe/80 dark:text-marfil-muted/80">
+            LAT: -34.6037° • LON: -58.3816° • UTC-3
+          </div>
+        </div>
+
+        <!-- Núcleo Central Hero: Tipografía Gigante, Mucha Presencia & Botones de Acción -->
+        <div class="space-y-6 sm:space-y-8 my-auto py-4 sm:py-10">
+          <div class="space-y-2 sm:space-y-3">
+            <span class="block font-syne text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-espresso/90 dark:text-marfil-100/90 uppercase">
+              MANUEL VERONESE
+            </span>
+            <h1 class="text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-espresso dark:text-marfil-100 uppercase leading-[0.95] sm:leading-[0.92] flex flex-col">
+              <span class="font-syne text-espresso dark:text-marfil-100">ANALISTA EN SISTEMAS</span>
+              <span class="font-display italic font-normal text-tangerine-600 dark:text-tangerine-400 lowercase text-5xl xs:text-6xl sm:text-7xl md:text-8xl lg:text-9xl tracking-tight leading-[0.9] sm:leading-[0.88] mt-1">
+                &amp; full-stack engineer
+              </span>
+            </h1>
+          </div>
+
+          <!-- Párrafo Descriptivo Breve y de Alto Impacto -->
+          <p class="font-mono text-xs sm:text-sm text-taupe dark:text-marfil-muted max-w-2xl leading-relaxed">
+            Especializado en arquitectura de software, modelado de dominio y diseño de sistemas escalables con bases de datos APIs de alto rendimiento.
+          </p>
+
+          <!-- Enlaces Rápidos de Contacto Directo (Centrados y con mejor holgura en mobile) -->
+          <div class="flex flex-wrap items-center justify-center sm:justify-start gap-2.5 sm:gap-3 pt-1 text-xs font-mono w-full">
+            <a
+              href="https://github.com/ManuelVeronese"
+              target="_blank"
+              rel="noreferrer"
+              class="px-4 py-2 sm:px-4.5 sm:py-2.5 rounded-full border border-sand dark:border-grafito-700 bg-white dark:bg-grafito-800 hover:border-espresso dark:hover:border-marfil-300 hover:bg-parchment dark:hover:bg-grafito-750 transition-all flex items-center gap-1.5 text-espresso dark:text-marfil-100 font-semibold shadow-xs active:scale-95"
+            >
+              <span>GitHub</span>
+              <span class="text-tangerine-600 dark:text-tangerine-400 text-[10px]">↗</span>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/manuel-agustin-veronese/"
+              target="_blank"
+              rel="noreferrer"
+              class="px-4 py-2 sm:px-4.5 sm:py-2.5 rounded-full border border-sand dark:border-grafito-700 bg-white dark:bg-grafito-800 hover:border-espresso dark:hover:border-marfil-300 hover:bg-parchment dark:hover:bg-grafito-750 transition-all flex items-center gap-1.5 text-espresso dark:text-marfil-100 font-semibold shadow-xs active:scale-95"
+            >
+              <span>LinkedIn</span>
+              <span class="text-cobalt-600 dark:text-cobalt-400 text-[10px]">↗</span>
+            </a>
+            <a
+              href="#contacto"
+              class="px-4 py-2 sm:px-4.5 sm:py-2.5 rounded-full border border-sand dark:border-grafito-700 bg-white dark:bg-grafito-800 hover:border-espresso dark:hover:border-marfil-300 hover:bg-parchment dark:hover:bg-grafito-750 transition-all flex items-center gap-1.5 text-espresso dark:text-marfil-100 font-semibold shadow-xs active:scale-95"
+            >
+              <span>Contacto Directo</span>
+              <span class="text-emerald-600 dark:text-emerald-400 text-[10px]">↓</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Indicador Inferior para Scroll hacia las Secciones -->
+        <div class="pt-2 sm:pt-4 border-t border-sand/70 dark:border-grafito-700/70 flex items-center justify-between text-[9px] sm:text-[11px] font-mono text-taupe dark:text-marfil-muted">
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse-fast"></span>
+            <span class="uppercase tracking-wider font-semibold text-espresso/90 dark:text-marfil-200">DISPONIBLE // FULL-STACK</span>
+          </div>
+          <a
+            href="#proyectos"
+            class="flex items-center gap-1.5 hover:text-espresso dark:hover:text-marfil-100 transition-colors group cursor-pointer"
+            title="Desplazarse a los proyectos destacados"
+          >
+            <span class="hidden xs:inline uppercase tracking-widest font-semibold text-[10px]">Deslizar para explorar</span>
+            <span class="text-tangerine-600 dark:text-tangerine-400 group-hover:translate-y-1 transition-transform inline-block font-bold">↓</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- ============================================================== -->
+      <!-- KINETIC TICKER / MARQUEE DE MUCHAS LETRAS & TECNOLOGÍAS        -->
+      <!-- ============================================================== -->
+      <div class="marquee-container py-3 border-y border-sand dark:border-grafito-700 bg-parchment/70 dark:bg-grafito-850/80 font-mono text-xs text-espresso dark:text-marfil-200 font-semibold uppercase tracking-wider">
+        <div class="flex gap-8 whitespace-nowrap animate-marquee">
+          <span>UML USE CASES</span>
+          <span class="text-tangerine-600 dark:text-tangerine-400">✦</span>
+          <span>POSTGRESQL</span>
+          <span class="text-cobalt-600 dark:text-cobalt-400">✦</span>
+          <span>DISTRIBUTED MUTEX</span>
+          <span class="text-emerald-600 dark:text-emerald-400">✦</span>
+          <span>STRATEGY &amp; FACTORY PATTERNS</span>
+          <span class="text-violet-600 dark:text-violet-400">✦</span>
+          <span>DOCKER CONTAINERS</span>
+          <span class="text-crimson-600 dark:text-crimson-400">✦</span>
+          <span>FINITE STATE MACHINES</span>
+          <span class="text-tangerine-600 dark:text-tangerine-400">✦</span>
+          <span>REST API CONTRACTS</span>
+          <span class="text-cobalt-600 dark:text-cobalt-400">✦</span>
+          <span>NORMALIZATION 3FN</span>
+          <span class="text-emerald-600 dark:text-emerald-400">✦</span>
+          <!-- Duplicate for seamless loop -->
+          <span>UML USE CASES</span>
+          <span class="text-tangerine-600 dark:text-tangerine-400">✦</span>
+          <span>POSTGRESQL</span>
+          <span class="text-cobalt-600 dark:text-cobalt-400">✦</span>
+          <span>DISTRIBUTED MUTEX</span>
+          <span class="text-emerald-600 dark:text-emerald-400">✦</span>
+          <span>STRATEGY &amp; FACTORY PATTERNS</span>
+          <span class="text-violet-600 dark:text-violet-400">✦</span>
+          <span>DOCKER CONTAINERS</span>
+          <span class="text-crimson-600 dark:text-crimson-400">✦</span>
+          <span>FINITE STATE MACHINES</span>
+          <span class="text-tangerine-600 dark:text-tangerine-400">✦</span>
+          <span>REST API CONTRACTS</span>
+          <span class="text-cobalt-600 dark:text-cobalt-400">✦</span>
+          <span>NORMALIZATION 3FN</span>
+          <span class="text-emerald-600 dark:text-emerald-400">✦</span>
+        </div>
+      </div>
+
+      <!-- ============================================================== -->
+      <!-- SECCIÓN C: PROYECTOS DESTACADOS (TARJETAS MINIMALISTAS CON 3D) -->
+      <!-- ============================================================== -->
+      <section id="proyectos" class="space-y-8">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2.5 sm:gap-4 border-b border-sand dark:border-grafito-700 pb-3">
+          <div class="flex flex-wrap items-center gap-2 sm:gap-3">
+            <span class="px-2 py-0.5 rounded-full bg-tangerine-50 dark:bg-tangerine-950/40 text-tangerine-700 dark:text-tangerine-300 border border-tangerine-200 dark:border-tangerine-800/60 font-mono text-[11px] font-bold shrink-0">
+              01 // ESTUDIOS
+            </span>
+            <h2 class="font-syne text-xl sm:text-2xl md:text-3xl font-bold uppercase tracking-tight text-espresso dark:text-marfil-100">
+              Proyectos Destacados
+            </h2>
+          </div>
+          <span class="font-mono text-[11px] sm:text-xs text-taupe dark:text-marfil-muted font-semibold tracking-wider shrink-0">
+            2 ESTUDIOS DE CASO
+          </span>
+        </div>
+
+        <div class="grid grid-cols-1 gap-10 sm:gap-14">
+
+          <!-- -------------------------------------------------------- -->
+          <!-- TARJETA PROYECTO 1: LEXPAY                               -->
+          <!-- -------------------------------------------------------- -->
+          <article
+            id="tarjeta-lexpay"
+            class="tilt-card scroll-reveal border border-sand dark:border-grafito-700 bg-white dark:bg-grafito-850 rounded-2xl p-5 sm:p-7 md:p-8 space-y-6 sm:space-y-7 shadow-xs relative"
+          >
+            <!-- Cabecera de la Tarjeta -->
+            <div class="flex flex-col lg:flex-row lg:items-start justify-between gap-3 sm:gap-4 border-b border-sand/80 dark:border-grafito-700/80 pb-4.5">
+              <div class="space-y-2.5">
+                <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
+                  <h3 class="font-syne text-2xl sm:text-3xl lg:text-4xl font-bold text-espresso dark:text-marfil-100 tracking-tight">
+                    LexPay
+                  </h3>
+                  <div class="flex flex-wrap items-center gap-1.5 font-mono text-[11px]">
+                    <span class="px-2 py-0.5 rounded-md bg-cobalt-50 dark:bg-cobalt-950/50 text-cobalt-700 dark:text-cobalt-300 border border-cobalt-200 dark:border-cobalt-800/60 font-medium">TypeScript</span>
+                    <span class="px-2 py-0.5 rounded-md bg-emerald-50 dark:bg-emerald-950/50 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800/60 font-medium">React</span>
+                    <span class="px-2 py-0.5 rounded-md bg-violet-50 dark:bg-violet-950/50 text-violet-700 dark:text-violet-300 border border-violet-200 dark:border-violet-800/60 font-medium">PostgreSQL</span>
+                    <span class="px-2 py-0.5 rounded-md bg-parchment dark:bg-grafito-750 text-espresso dark:text-marfil-100 border border-sand dark:border-grafito-600 font-medium">Docker</span>
+                    <span class="px-2 py-0.5 rounded-md bg-emerald-50 dark:bg-emerald-950/50 text-emerald-800 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800/60 font-medium">Node.js</span>
+                    <span class="px-2 py-0.5 rounded-md bg-crimson-50 dark:bg-crimson-950/50 text-crimson-700 dark:text-crimson-300 border border-crimson-200 dark:border-crimson-800/60 font-medium">NestJS</span>
+                  </div>
+                </div>
+                <p class="font-mono text-xs font-semibold text-tangerine-600 dark:text-tangerine-400 uppercase tracking-wide">
+                  Sistema de Facturación, Cobranzas y Gestión Financiera
+                </p>
+              </div>
+              <span class="font-mono text-[11px] sm:text-xs text-taupe dark:text-marfil-muted shrink-0 self-start lg:self-auto">REF: LP-FIN-2026</span>
+            </div>
+
+            <!-- Contenedor de Imagen 16:9 con Borde Fino y Pie Editorial -->
+            <figure class="space-y-2.5">
+              <div class="relative w-full aspect-video border border-sand/90 dark:border-grafito-700 rounded-xl overflow-hidden bg-[#F4F1EB] dark:bg-grafito-950">
+                <img
+                  src="/lexpay1.png"
+                  alt="Figura 1.0: Panel principal del módulo central de planes de pagos"
+                  class="w-full h-full object-cover object-center"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption class="text-xs font-mono text-taupe dark:text-marfil-muted flex flex-col sm:flex-row sm:items-center justify-between gap-1 px-1">
+                <span class="font-medium text-espresso/90 dark:text-marfil-200">Figura 1.0: Panel principal del módulo central de planes de pagos</span>
+                <span class="text-tangerine-600 dark:text-tangerine-400 font-bold">16:9 • DOMINIO CONTABLE</span>
+              </figcaption>
+            </figure>
+
+            <!-- Tarjetas Problema / Solución -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs font-mono pt-1">
+              <div class="p-4 sm:p-5 rounded-xl bg-parchment/60 dark:bg-grafito-800/80 border border-sand/80 dark:border-grafito-700 space-y-2">
+                <span class="text-[10px] uppercase font-bold text-crimson-600 dark:text-crimson-400 block tracking-wider">
+                  Problema
+                </span>
+                <p class="text-espresso dark:text-marfil-100 font-medium leading-relaxed">
+                  Control contable estricto, trazabilidad de cobros y emisión fiscal sin desfasajes ni pérdidas de comprobantes ante inconsistencias transaccionales.
+                </p>
+              </div>
+
+              <div class="p-4 sm:p-5 rounded-xl bg-parchment/60 dark:bg-grafito-800/80 border border-sand/80 dark:border-grafito-700 space-y-2">
+                <span class="text-[10px] uppercase font-bold text-emerald-600 dark:text-emerald-400 block tracking-wider">
+                  Solución
+                </span>
+                <p class="text-espresso dark:text-marfil-100 font-medium leading-relaxed">
+                  Motor de conciliación con garantías en PostgreSQL, idempotencia de pagos y desacoplamiento de pasarelas mediante patrones Strategy y Factory.
+                </p>
+              </div>
+            </div>
+
+            <!-- Badges al pie de la tarjeta -->
+            <div class="border-t border-sand/80 dark:border-grafito-700 pt-4 flex flex-wrap items-center gap-2 text-xs font-mono">
+              <span class="px-2.5 py-1 rounded-md bg-cobalt-50 dark:bg-cobalt-950/50 text-cobalt-700 dark:text-cobalt-300 border border-cobalt-200 dark:border-cobalt-800/60 font-semibold">Backend</span>
+              <span class="px-2.5 py-1 rounded-md bg-emerald-50 dark:bg-emerald-950/50 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800/60 font-semibold">Frontend</span>
+              <span class="px-2.5 py-1 rounded-md bg-violet-50 dark:bg-violet-950/50 text-violet-700 dark:text-violet-300 border border-violet-200 dark:border-violet-800/60 font-semibold">Base de Datos</span>
+              <span class="px-2.5 py-1 rounded-md bg-tangerine-50 dark:bg-tangerine-950/50 text-tangerine-700 dark:text-tangerine-300 border border-tangerine-200 dark:border-tangerine-800/60 font-semibold">UML Docs</span>
+            </div>
+          </article>
+
+          <!-- -------------------------------------------------------- -->
+          <!-- TARJETA PROYECTO 2: MEDINA & ASOCIADOS                   -->
+          <!-- -------------------------------------------------------- -->
+          <article
+            id="tarjeta-medina-asociados"
+            class="tilt-card scroll-reveal border border-sand dark:border-grafito-700 bg-white dark:bg-grafito-850 rounded-2xl p-5 sm:p-7 md:p-8 space-y-6 sm:space-y-7 shadow-xs relative"
+          >
+            <!-- Cabecera de la Tarjeta -->
+            <div class="flex flex-col lg:flex-row lg:items-start justify-between gap-3 sm:gap-4 border-b border-sand/80 dark:border-grafito-700/80 pb-4.5">
+              <div class="space-y-2.5">
+                <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
+                  <h3 class="font-syne text-2xl sm:text-3xl lg:text-4xl font-bold text-espresso dark:text-marfil-100 tracking-tight">
+                    Medina &amp; Asociados
+                  </h3>
+                  <div class="flex flex-wrap items-center gap-1.5 font-mono text-[11px]">
+                    <span class="px-2 py-0.5 rounded-md bg-tangerine-50 dark:bg-tangerine-950/50 text-tangerine-700 dark:text-tangerine-300 border border-tangerine-200 dark:border-tangerine-800/60 font-medium">Java</span>
+                    <span class="px-2 py-0.5 rounded-md bg-emerald-50 dark:bg-emerald-950/50 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800/60 font-medium">Spring Boot</span>
+                    <span class="px-2 py-0.5 rounded-md bg-cobalt-50 dark:bg-cobalt-950/50 text-cobalt-700 dark:text-cobalt-300 border border-cobalt-200 dark:border-cobalt-800/60 font-medium">React</span>
+                    <span class="px-2 py-0.5 rounded-md bg-violet-50 dark:bg-violet-950/50 text-violet-700 dark:text-violet-300 border border-violet-200 dark:border-violet-800/60 font-medium">PostgreSQL</span>
+                    <span class="px-2 py-0.5 rounded-md bg-parchment dark:bg-grafito-750 text-espresso dark:text-marfil-100 border border-sand dark:border-grafito-600 font-medium">Docker</span>
+                    <span class="px-2 py-0.5 rounded-md bg-crimson-50 dark:bg-crimson-950/50 text-crimson-700 dark:text-crimson-300 border border-crimson-200 dark:border-crimson-800/60 font-medium">JRE</span>
+                  </div>
+                </div>
+                <p class="font-mono text-xs font-semibold text-violet-600 dark:text-violet-400 uppercase tracking-wide">
+                  Sistema de Gestión y Asignación de Turnos / Reservas
+                </p>
+              </div>
+              <span class="font-mono text-[11px] sm:text-xs text-taupe dark:text-marfil-muted shrink-0 self-start lg:self-auto">REF: MA-FSM-2026</span>
+            </div>
+
+            <!-- Contenedor de Imagen 16:9 con Borde Fino y Pie Editorial -->
+            <figure class="space-y-2.5">
+              <div class="relative w-full aspect-video border border-sand/90 dark:border-grafito-700 rounded-xl overflow-hidden bg-[#F4F1EB] dark:bg-grafito-950">
+                <img
+                  src="turnero1.jpeg"
+                  alt="Figura 2.0: Panel de administración de turnos"
+                  class="w-full h-full object-cover object-center"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption class="text-xs font-mono text-taupe dark:text-marfil-muted flex flex-col sm:flex-row sm:items-center justify-between gap-1 px-1">
+                <span class="font-medium text-espresso/90 dark:text-marfil-200">Figura 2.0: Panel de administración de turnos</span>
+                <span class="text-violet-600 dark:text-violet-400 font-bold">16:9 • MATRIZ CONCURRENTE</span>
+              </figcaption>
+            </figure>
+
+            <!-- Tarjetas Problema / Solución -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs font-mono pt-1">
+              <div class="p-4 sm:p-5 rounded-xl bg-parchment/60 dark:bg-grafito-800/80 border border-sand/80 dark:border-grafito-700 space-y-2">
+                <span class="text-[10px] uppercase font-bold text-crimson-600 dark:text-crimson-400 block tracking-wider">
+                  Problema
+                </span>
+                <p class="text-espresso dark:text-marfil-100 font-medium leading-relaxed">
+                  Automatización de agenda y eliminación sistemática de colisiones y overbooking producidas por reservas simultáneas en alta concurrencia.
+                </p>
+              </div>
+
+              <div class="p-4 sm:p-5 rounded-xl bg-parchment/60 dark:bg-grafito-800/80 border border-sand/80 dark:border-grafito-700 space-y-2">
+                <span class="text-[10px] uppercase font-bold text-emerald-600 dark:text-emerald-400 block tracking-wider">
+                  Solución
+                </span>
+                <p class="text-espresso dark:text-marfil-100 font-medium leading-relaxed">
+                  Arquitectura FSM (Máquina de Estados Finitos) con bloqueos atómicos temporales (Redis Mutex TTL) y aislamiento transaccional repetible.
+                </p>
+              </div>
+            </div>
+
+            <!-- Badges al pie de la tarjeta -->
+            <div class="border-t border-sand/80 dark:border-grafito-700 pt-4 flex flex-wrap items-center gap-2 text-xs font-mono">
+              <span class="px-2.5 py-1 rounded-md bg-cobalt-50 dark:bg-cobalt-950/50 text-cobalt-700 dark:text-cobalt-300 border border-cobalt-200 dark:border-cobalt-800/60 font-semibold">Backend</span>
+              <span class="px-2.5 py-1 rounded-md bg-emerald-50 dark:bg-emerald-950/50 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800/60 font-semibold">Frontend</span>
+              <span class="px-2.5 py-1 rounded-md bg-violet-50 dark:bg-violet-950/50 text-violet-700 dark:text-violet-300 border border-violet-200 dark:border-violet-800/60 font-semibold">Base de Datos</span>
+              <span class="px-2.5 py-1 rounded-md bg-tangerine-50 dark:bg-tangerine-950/50 text-tangerine-700 dark:text-tangerine-300 border border-tangerine-200 dark:border-tangerine-800/60 font-semibold">UML Docs</span>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- ============================================================== -->
+      <!-- SECCIÓN B: ENFOQUE METODOLÓGICO (BENTO CARDS MINIMALISTAS)    -->
+      <!-- ============================================================== -->
+      <section id="metodologia" class="space-y-8">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2.5 sm:gap-4 border-b border-sand dark:border-grafito-700 pb-3">
+          <div class="flex flex-wrap items-center gap-2 sm:gap-3">
+            <span class="px-2 py-0.5 rounded-full bg-cobalt-50 dark:bg-cobalt-950/40 text-cobalt-700 dark:text-cobalt-300 border border-cobalt-200 dark:border-cobalt-800/60 font-mono text-[11px] font-bold shrink-0">
+              02 // CRITERIO
+            </span>
+            <h2 class="font-syne text-xl sm:text-2xl md:text-3xl font-bold uppercase tracking-tight text-espresso dark:text-marfil-100">
+              Enfoque Metodológico &amp; Competencias
+            </h2>
+          </div>
+          <span class="font-mono text-[11px] sm:text-xs text-taupe dark:text-marfil-muted font-semibold tracking-wider shrink-0">
+            3 PILARES TÉCNICOS
+          </span>
+        </div>
+
+        <!-- 3 Tarjetas Bento con Colores Distintivos y Letras Técnicas -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+          <!-- Tarjeta 1: Análisis & Diseño de Sistemas -->
+          <div
+            class="tilt-card scroll-reveal p-5 sm:p-7 rounded-xl bg-white dark:bg-grafito-850 border border-sand dark:border-grafito-700 hover:border-cobalt-300 dark:hover:border-cobalt-500 transition-all space-y-5 shadow-xs relative"
+            style="transition-delay: 0ms;"
+          >
+            <div class="flex items-center justify-between border-b border-sand/70 dark:border-grafito-700/70 pb-3">
+              <span class="px-2 py-0.5 rounded-full bg-cobalt-50 dark:bg-cobalt-950/40 text-cobalt-700 dark:text-cobalt-300 border border-cobalt-200 dark:border-cobalt-800/60 font-mono text-[11px] font-bold">
+                01 // ARQUITECTURA
+              </span>
+              <span class="font-mono text-[10px] text-taupe dark:text-marfil-muted">MODELADO</span>
+            </div>
+
+            <div class="space-y-1">
+              <h3 class="font-syne text-xl font-bold text-espresso dark:text-marfil-100">
+                Análisis &amp; Diseño de Sistemas
+              </h3>
+              <p class="font-mono text-xs text-cobalt-600 dark:text-cobalt-400 font-semibold">
+                Validación formal previa a la codificación
+              </p>
+            </div>
+
+            <div class="space-y-2 text-xs font-mono">
+              <div class="p-2.5 rounded-md bg-cobalt-50/50 dark:bg-cobalt-950/30 border border-cobalt-100 dark:border-cobalt-900/60 flex items-center justify-between gap-2">
+                <span class="text-espresso dark:text-marfil-100 font-medium">Diagramas UML</span>
+                <span class="text-cobalt-700 dark:text-cobalt-300 font-bold text-right">Clases, Secuencia</span>
+              </div>
+              <div class="p-2.5 rounded-md bg-cobalt-50/50 dark:bg-cobalt-950/30 border border-cobalt-100 dark:border-cobalt-900/60 flex items-center justify-between gap-2">
+                <span class="text-espresso dark:text-marfil-100 font-medium">Requerimientos</span>
+                <span class="text-cobalt-700 dark:text-cobalt-300 font-bold text-right">Casos de Uso</span>
+              </div>
+              <div class="p-2.5 rounded-md bg-cobalt-50/50 dark:bg-cobalt-950/30 border border-cobalt-100 dark:border-cobalt-900/60 flex items-center justify-between gap-2">
+                <span class="text-espresso dark:text-marfil-100 font-medium">Patrones</span>
+                <span class="text-cobalt-700 dark:text-cobalt-300 font-bold text-right">GoF &amp; Clean Architecture</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tarjeta 2: Desarrollo Full-Stack -->
+          <div
+            class="tilt-card scroll-reveal p-5 sm:p-7 rounded-xl bg-white dark:bg-grafito-850 border border-sand dark:border-grafito-700 hover:border-emerald-300 dark:hover:border-emerald-500 transition-all space-y-5 shadow-xs relative"
+            style="transition-delay: 120ms;"
+          >
+            <div class="flex items-center justify-between border-b border-sand/70 dark:border-grafito-700/70 pb-3">
+              <span class="px-2 py-0.5 rounded-full bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800/60 font-mono text-[11px] font-bold">
+                02 // DESARROLLO
+              </span>
+              <span class="font-mono text-[10px] text-taupe dark:text-marfil-muted">FULL-STACK</span>
+            </div>
+
+            <div class="space-y-1">
+              <h3 class="font-syne text-xl font-bold text-espresso dark:text-marfil-100">
+                Desarrollo Full-Stack
+              </h3>
+              <p class="font-mono text-xs text-emerald-600 dark:text-emerald-400 font-semibold">
+                Sistemas escalables orientados a dominio
+              </p>
+            </div>
+
+            <div class="space-y-2 text-xs font-mono">
+              <div class="p-2.5 rounded-md bg-emerald-50/50 dark:bg-emerald-950/30 border border-emerald-100 dark:border-emerald-900/60 flex items-center justify-between gap-2">
+                <span class="text-espresso dark:text-marfil-100 font-medium">Lógica Backend</span>
+                <span class="text-emerald-700 dark:text-emerald-300 font-bold text-right">Concurrencia</span>
+              </div>
+              <div class="p-2.5 rounded-md bg-emerald-50/50 dark:bg-emerald-950/30 border border-emerald-100 dark:border-emerald-900/60 flex items-center justify-between gap-2">
+                <span class="text-espresso dark:text-marfil-100 font-medium">Bases de Datos</span>
+                <span class="text-emerald-700 dark:text-emerald-300 font-bold text-right">PostgreSQL</span>
+              </div>
+              <div class="p-2.5 rounded-md bg-emerald-50/50 dark:bg-emerald-950/30 border border-emerald-100 dark:border-emerald-900/60 flex items-center justify-between gap-2">
+                <span class="text-espresso dark:text-marfil-100 font-medium">APIs &amp; Frontend</span>
+                <span class="text-emerald-700 dark:text-emerald-300 font-bold text-right">RESTful &amp; UI Funcional</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tarjeta 3: Control y Calidad -->
+          <div
+            class="tilt-card scroll-reveal p-5 sm:p-7 rounded-xl bg-white dark:bg-grafito-850 border border-sand dark:border-grafito-700 hover:border-tangerine-300 dark:hover:border-tangerine-500 transition-all space-y-5 shadow-xs relative"
+            style="transition-delay: 240ms;"
+          >
+            <div class="flex items-center justify-between border-b border-sand/70 dark:border-grafito-700/70 pb-3">
+              <span class="px-2 py-0.5 rounded-full bg-tangerine-50 dark:bg-tangerine-950/40 text-tangerine-700 dark:text-tangerine-300 border border-tangerine-200 dark:border-tangerine-800/60 font-mono text-[11px] font-bold">
+                03 // CALIDAD &amp; OPS
+              </span>
+              <span class="font-mono text-[10px] text-taupe dark:text-marfil-muted">CICLO DE VIDA</span>
+            </div>
+
+            <div class="space-y-1">
+              <h3 class="font-syne text-xl font-bold text-espresso dark:text-marfil-100">
+                Control y Calidad
+              </h3>
+              <p class="font-mono text-xs text-tangerine-600 dark:text-tangerine-400 font-semibold">
+                Entornos reproducibles y trazabilidad
+              </p>
+            </div>
+
+            <div class="space-y-2 text-xs font-mono">
+              <div class="p-2.5 rounded-md bg-tangerine-50/50 dark:bg-tangerine-950/30 border border-tangerine-100 dark:border-tangerine-900/60 flex items-center justify-between gap-2">
+                <span class="text-espresso dark:text-marfil-100 font-medium">Versionado</span>
+                <span class="text-tangerine-700 dark:text-tangerine-300 font-bold text-right">Git &amp; GitHub</span>
+              </div>
+              <div class="p-2.5 rounded-md bg-tangerine-50/50 dark:bg-tangerine-950/30 border border-tangerine-100 dark:border-tangerine-900/60 flex items-center justify-between gap-2">
+                <span class="text-espresso dark:text-marfil-100 font-medium">Contenedores</span>
+                <span class="text-tangerine-700 dark:text-tangerine-300 font-bold text-right">Docker</span>
+              </div>
+              <div class="p-2.5 rounded-md bg-tangerine-50/50 dark:bg-tangerine-950/30 border border-tangerine-100 dark:border-tangerine-900/60 flex items-center justify-between gap-2">
+                <span class="text-espresso dark:text-marfil-100 font-medium">Testing &amp; Docs</span>
+                <span class="text-tangerine-700 dark:text-tangerine-300 font-bold text-right">Unit &amp; Integración</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ============================================================== -->
+      <!-- SECCIÓN D: PIE DE PÁGINA (CALL TO ACTION CON TIPOGRAFÍA GIGANTE) -->
+      <!-- ============================================================== -->
+      <footer id="contacto" class="border-t border-sand dark:border-grafito-700 pt-16 pb-12 space-y-12">
+        <div class="space-y-8">
+          <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2.5 sm:gap-4 border-b border-sand dark:border-grafito-700 pb-3">
+            <div class="flex flex-wrap items-center gap-2 sm:gap-3">
+              <span class="px-2 py-0.5 rounded-full bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800/60 font-mono text-[11px] font-bold shrink-0">
+                03 // CONTACTO
+              </span>
+              <h2 class="font-syne text-xl sm:text-2xl md:text-3xl font-bold uppercase tracking-tight text-espresso dark:text-marfil-100">
+                Disponibilidad &amp; Enlace
+              </h2>
+            </div>
+            <span class="font-mono text-[11px] sm:text-xs text-taupe dark:text-marfil-muted font-semibold tracking-wider shrink-0">
+              CANAL DIRECTO
+            </span>
+          </div>
+
+          <!-- Tarjeta de Contacto Estilo Marco.fyi / Succinct con Gran Tipografía -->
+          <div class="tilt-card border border-sand dark:border-grafito-700 bg-white dark:bg-grafito-850 rounded-2xl p-5 sm:p-8 md:p-12 space-y-6 sm:space-y-8 shadow-sm relative">
+            <div class="space-y-2">
+              <span class="font-mono text-[11px] sm:text-xs text-tangerine-600 dark:text-tangerine-400 uppercase font-bold tracking-wider block">
+                ¿Iniciamos una solución o consultoría?
+              </span>
+              <h3 class="font-syne text-2xl xs:text-3xl sm:text-5xl md:text-6xl font-extrabold text-espresso dark:text-marfil-100 tracking-tight uppercase leading-[1.08] sm:leading-none break-words">
+                HABLEMOS DE ARQUITECTURA.
+              </h3>
+            </div>
+
+            <!-- Email en Display Monospace Grande con Copiado con un Clic -->
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-4 border-t border-sand/80 dark:border-grafito-700/80">
+              <a
+                href="mailto:manuelveronese7@gmail.com"
+                id="footer-email-link"
+                class="font-mono text-base xs:text-lg sm:text-2xl md:text-3xl text-espresso dark:text-marfil-100 hover:text-tangerine-600 dark:hover:text-tangerine-400 transition-colors font-bold tracking-tight break-all"
+              >
+                manuelveronese7@gmail.com
+              </a>
+
+              <button
+                type="button"
+                id="btn-footer-copy"
+                onclick="copyEmail('manuelveronese7@gmail.com')"
+                class="w-full sm:w-auto px-5 py-3 rounded-full bg-espresso dark:bg-marfil-100 hover:bg-tangerine-600 dark:hover:bg-tangerine-500 text-linen dark:text-grafito-900 text-xs font-mono font-bold transition-all active:scale-95 flex items-center justify-center gap-2 shrink-0 cursor-pointer shadow-sm"
+              >
+                <span id="footer-copy-icon">📋</span>
+                <span id="footer-copy-text">Copiar al Portapapeles</span>
+              </button>
+            </div>
+
+            <!-- Métricas de Disponibilidad -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-4 pt-4 text-xs font-mono border-t border-sand/60 dark:border-grafito-700/80">
+              <div class="p-2 sm:p-0 rounded-lg bg-parchment/40 sm:bg-transparent dark:bg-grafito-800/40 sm:dark:bg-transparent">
+                <span class="text-taupe dark:text-marfil-muted block text-[10px] uppercase">Modalidad</span>
+                <span class="font-bold text-espresso dark:text-marfil-100">Remoto / Híbrido</span>
+              </div>
+              <div class="p-2 sm:p-0 rounded-lg bg-parchment/40 sm:bg-transparent dark:bg-grafito-800/40 sm:dark:bg-transparent">
+                <span class="text-taupe dark:text-marfil-muted block text-[10px] uppercase">Zona Horaria</span>
+                <span class="font-bold text-espresso dark:text-marfil-100">UTC-3 (Bs As)</span>
+              </div>
+              <div class="p-2 sm:p-0 rounded-lg bg-parchment/40 sm:bg-transparent dark:bg-grafito-800/40 sm:dark:bg-transparent">
+                <span class="text-taupe dark:text-marfil-muted block text-[10px] uppercase">Tiempo Respuesta</span>
+                <span class="font-bold text-emerald-600 dark:text-emerald-400">&lt; 24h hábiles</span>
+              </div>
+              <div class="p-2 sm:p-0 rounded-lg bg-parchment/40 sm:bg-transparent dark:bg-grafito-800/40 sm:dark:bg-transparent">
+                <span class="text-taupe dark:text-marfil-muted block text-[10px] uppercase">Código Fuente</span>
+                <span class="font-bold text-cobalt-600 dark:text-cobalt-400">GitHub Verified</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Enlaces de Perfiles en Fichas Minimalistas -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs font-mono">
+            <a
+              href="https://github.com/ManuelVeronese"
+              target="_blank"
+              rel="noreferrer"
+              class="p-4 rounded-xl border border-sand dark:border-grafito-700 bg-white dark:bg-grafito-800 hover:border-espresso dark:hover:border-marfil-300 hover:shadow-xs transition-all flex items-center justify-between"
+            >
+              <div class="space-y-0.5">
+                <span class="text-[10px] text-taupe dark:text-marfil-muted block uppercase">Repositorios</span>
+                <span class="font-bold text-espresso dark:text-marfil-100">github.com/ManuelVeronese</span>
+              </div>
+              <span class="text-tangerine-600 dark:text-tangerine-400 font-bold">↗</span>
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/manuel-agustin-veronese/"
+              target="_blank"
+              rel="noreferrer"
+              class="p-4 rounded-xl border border-sand dark:border-grafito-700 bg-white dark:bg-grafito-800 hover:border-espresso dark:hover:border-marfil-300 hover:shadow-xs transition-all flex items-center justify-between"
+            >
+              <div class="space-y-0.5">
+                <span class="text-[10px] text-taupe dark:text-marfil-muted block uppercase">Red Profesional</span>
+                <span class="font-bold text-espresso dark:text-marfil-100">linkedin.com/in/manuel-agustin-veronese</span>
+              </div>
+              <span class="text-cobalt-600 dark:text-cobalt-400 font-bold">↗</span>
+            </a>
+
+            <!---<button
+              type="button"
+              onclick="window.print()"
+              class="p-4 rounded-xl border border-sand dark:border-grafito-700 bg-white dark:bg-grafito-800 hover:border-espresso dark:hover:border-marfil-300 hover:shadow-xs transition-all flex items-center justify-between text-left cursor-pointer"
+            >
+            --->
+            <a
+              href="CV-VeroneseManuel.pdf"
+              download="CV-VeroneseManuel.pdf"
+              class="p-4 rounded-xl border border-sand dark:border-grafito-700 bg-white dark:bg-grafito-800 hover:border-espresso dark:hover:border-marfil-300 hover:shadow-xs transition-all flex items-center justify-between text-left cursor-pointer"
+            >
+
+
+              <div class="space-y-0.5">
+                <span class="text-[10px] text-taupe dark:text-marfil-muted block uppercase">Currículum Vitae</span>
+                <span class="font-bold text-espresso dark:text-marfil-100">Descargar PDF</span>
+              </div>
+              <span class="text-emerald-600 dark:text-emerald-400 font-bold">⎙</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Colofón Minimalista -->
+        <div class="border-t border-sand-light dark:border-grafito-700/80 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-taupe dark:text-marfil-muted">
+          <div>
+            <span>© 2026 MANUEL VERONESE • ANALISTA EN SISTEMAS</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+            <span class="text-espresso dark:text-marfil-100 font-semibold">ALL SYSTEMS NOMINAL</span>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <!-- Botón Flotante Circular: Volver Arriba -->
+    <button
+      id="scroll-to-top"
+      type="button"
+      onclick="scrollToTop()"
+      aria-label="Volver arriba"
+      title="Volver arriba"
+      class="fixed bottom-5 right-5 sm:bottom-7 sm:right-7 z-40 w-10 h-10 sm:w-11 sm:h-11 rounded-full flex items-center justify-center bg-white/90 dark:bg-grafito-800/90 text-espresso dark:text-marfil-100 border border-sand dark:border-grafito-700 shadow-md dark:shadow-[0_4px_16px_rgba(0,0,0,0.5)] backdrop-blur-sm opacity-0 translate-y-3 pointer-events-none hover:bg-parchment dark:hover:bg-grafito-700 hover:border-espresso/40 dark:hover:border-marfil-300 active:scale-90 transition-all duration-300 cursor-pointer"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="18"
+        height="18"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="transition-transform duration-200 group-hover:-translate-y-0.5"
+      >
+        <path d="m18 15-6-6-6 6" />
+      </svg>
+    </button>
+
+    <!-- ============================================================== -->
+    <!-- SCRIPTS LIGEROS: RELOJ EN VIVO + 3D TILT + COPIADO + TEMA      -->
+    <!-- ============================================================== -->
+    <script>
+      // 1. Selector de modo oscuro (Grafito) / claro (Lino)
+      function toggleTheme() {
+        const isDark = document.documentElement.classList.toggle('dark');
+        try {
+          localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        } catch (e) {}
+      }
+
+      // 2. Reloj en vivo para navbar estilo Dejan.works
+      function updateNavClock() {
+        const clockEl = document.getElementById('nav-clock');
+        if (!clockEl) return;
+        try {
+          const options = { timeZone: 'America/Argentina/Buenos_Aires', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
+          const formatter = new Intl.DateTimeFormat('es-AR', options);
+          clockEl.innerText = formatter.format(new Date());
+        } catch (e) {
+          const now = new Date();
+          clockEl.innerText = now.getHours().toString().padStart(2, '0') + ':' + now.getMinutes().toString().padStart(2, '0');
+        }
+      }
+      setInterval(updateNavClock, 1000);
+      updateNavClock();
+
+      // 3. Animación de inclinación 3D en tarjetas estilo Daniel Sun (sin halo de luz que opaque el contenido)
+      if (window.matchMedia('(pointer: fine)').matches) {
+        document.querySelectorAll('.tilt-card').forEach((card) => {
+          card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            const rotateX = ((y - centerY) / centerY) * -3.5;
+            const rotateY = ((x - centerX) / centerX) * 3.5;
+
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+          });
+
+          card.addEventListener('mouseleave', () => {
+            card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
+          });
+        });
+      }
+
+      // 4. Copiado de email con feedback háptico/visual
+      const navMailSvg = `<svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>`;
+      const navCheckSvg = `<svg class="w-4 h-4 shrink-0 text-emerald-400 dark:text-emerald-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>`;
+
+      function copyEmail(email) {
+        navigator.clipboard.writeText(email).then(() => {
+          // Navbar feedback
+          const navIcon = document.getElementById('nav-copy-icon');
+          const navText = document.getElementById('nav-copy-text');
+          if (navIcon) navIcon.innerHTML = navCheckSvg;
+          if (navText) navText.innerText = 'Copiado!';
+
+          // Footer feedback
+          const footerIcon = document.getElementById('footer-copy-icon');
+          const footerText = document.getElementById('footer-copy-text');
+          if (footerIcon) footerIcon.innerText = '✓';
+          if (footerText) footerText.innerText = '¡Copiado al Portapapeles!';
+
+          setTimeout(() => {
+            if (navIcon) navIcon.innerHTML = navMailSvg;
+            if (navText) navText.innerText = 'Copiar Email';
+            if (footerIcon) footerIcon.innerText = '📋';
+            if (footerText) footerText.innerText = 'Copiar al Portapapeles';
+          }, 2500);
+        }).catch(() => {
+          window.location.href = 'mailto:' + email;
+        });
+      }
+
+      // 5. Botón Volver Arriba (Aparece tras hacer scroll)
+      const scrollToTopBtn = document.getElementById('scroll-to-top');
+
+      function handleScrollToTopVisibility() {
+        if (!scrollToTopBtn) return;
+        const currentScroll = window.scrollY || document.documentElement.scrollTop;
+        if (currentScroll > 350) {
+          scrollToTopBtn.classList.remove('opacity-0', 'translate-y-3', 'pointer-events-none');
+          scrollToTopBtn.classList.add('opacity-100', 'translate-y-0', 'pointer-events-auto');
+        } else {
+          scrollToTopBtn.classList.remove('opacity-100', 'translate-y-0', 'pointer-events-auto');
+          scrollToTopBtn.classList.add('opacity-0', 'translate-y-3', 'pointer-events-none');
+        }
+      }
+
+      window.addEventListener('scroll', handleScrollToTopVisibility, { passive: true });
+      handleScrollToTopVisibility();
+
+      function scrollToTop() {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      }
+
+      // 6. Animación de entrada suave (fade-in y desplazamiento hacia arriba) en proyectos y metodologías
+      (function initScrollReveal() {
+        const revealElements = document.querySelectorAll('.scroll-reveal');
+        if (!revealElements.length) return;
+
+        // Si el navegador no soporta IntersectionObserver o el usuario prefiere movimiento reducido, mostrar directamente
+        if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          revealElements.forEach((el) => {
+            el.classList.add('is-revealed', 'interactive');
+          });
+          return;
+        }
+
+        const observer = new IntersectionObserver((entries, obs) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const target = entry.target;
+              target.classList.add('is-revealed');
+              obs.unobserve(target); // Se asegura de que la animación solo ocurra una sola vez
+
+              // Habilitar microinteracciones rápidas después de completarse la transición de entrada
+              setTimeout(() => {
+                target.classList.add('interactive');
+              }, 850);
+            }
+          });
+        }, {
+          root: null,
+          rootMargin: '0px 0px -50px 0px', // Se activa con naturalidad al aproximarse al viewport
+          threshold: 0.12
+        });
+
+        revealElements.forEach((el) => observer.observe(el));
+      })();
+
+      // 7. Navegación activa con tono suave y sombreado, y sincronización de desplazamiento horizontal en mobile
+      (function initNavbarActiveTracking() {
+        const navBarElement = document.getElementById('navbar');
+        const navLinks = {
+          presentacion: document.getElementById('nav-link-presentacion'),
+          proyectos: document.getElementById('nav-link-proyectos'),
+          metodologia: document.getElementById('nav-link-metodologia'),
+          contacto: document.getElementById('nav-link-contacto')
+        };
+
+        let currentActiveId = null;
+
+        function centerNavPill(element) {
+          if (!element || !navBarElement) return;
+          // Solo desplazar si el contenedor de la navbar tiene overflow horizontal
+          if (navBarElement.scrollWidth <= navBarElement.clientWidth) return;
+
+          const navRect = navBarElement.getBoundingClientRect();
+          const elRect = element.getBoundingClientRect();
+          const targetScrollLeft = navBarElement.scrollLeft + (elRect.left - navRect.left) - (navBarElement.clientWidth / 2) + (elRect.width / 2);
+
+          navBarElement.scrollTo({
+            left: Math.max(0, targetScrollLeft),
+            behavior: 'smooth'
+          });
+        }
+
+        function setActiveNav(sectionId, shouldCenter = true) {
+          if (currentActiveId === sectionId) return;
+          currentActiveId = sectionId;
+
+          // 1. Manejo del pill de estado DISPONIBLE (#presentacion)
+          if (navLinks.presentacion) {
+            if (sectionId === 'presentacion') {
+              navLinks.presentacion.classList.remove('nav-disp-inactive');
+              navLinks.presentacion.classList.add('nav-disp-active');
+            } else {
+              navLinks.presentacion.classList.remove('nav-disp-active');
+              navLinks.presentacion.classList.add('nav-disp-inactive');
+            }
+          }
+
+          // 2. Manejo de las secciones con tono suave y sombreado para las demás
+          ['proyectos', 'metodologia', 'contacto'].forEach((id) => {
+            const link = navLinks[id];
+            if (!link) return;
+            if (id === sectionId) {
+              link.classList.remove('nav-item-inactive');
+              link.classList.add('nav-item-active');
+            } else {
+              link.classList.remove('nav-item-active');
+              link.classList.add('nav-item-inactive');
+            }
+          });
+
+          // Centrar suavemente en la barra si el elemento está seleccionado y la barra es deslizable
+          if (shouldCenter && navLinks[sectionId]) {
+            centerNavPill(navLinks[sectionId]);
+          }
+        }
+
+        // Clic directo en enlaces de la navbar
+        document.querySelectorAll('.capsule-nav a[href^="#"]').forEach((link) => {
+          link.addEventListener('click', (e) => {
+            const targetId = link.getAttribute('href').replace('#', '');
+            if (targetId && navLinks[targetId]) {
+              setActiveNav(targetId, true);
+            }
+          });
+        });
+
+        // Detección en tiempo real de la sección visible (Scroll Spy)
+        function updateNavOnScroll() {
+          const scrollY = window.scrollY || document.documentElement.scrollTop;
+          const windowHeight = window.innerHeight;
+          const docHeight = document.documentElement.scrollHeight;
+
+          // Si el usuario llega al fondo de la pantalla, activar 'contacto'
+          if (scrollY + windowHeight >= docHeight - 80) {
+            setActiveNav('contacto', true);
+            return;
+          }
+
+          // Si el usuario está al principio de la página, activar 'presentacion'
+          if (scrollY < 100) {
+            setActiveNav('presentacion', true);
+            return;
+          }
+
+          // Verificar secciones ordenadas de abajo hacia arriba
+          const sections = ['contacto', 'metodologia', 'proyectos', 'presentacion'];
+          const triggerOffset = 220; // Compensación de la navbar fija
+
+          for (const id of sections) {
+            const el = document.getElementById(id);
+            if (el) {
+              const top = el.offsetTop;
+              if (scrollY + triggerOffset >= top) {
+                setActiveNav(id, true);
+                break;
+              }
+            }
+          }
+        }
+
+        let navScrollRaf = null;
+        window.addEventListener('scroll', () => {
+          if (!navScrollRaf) {
+            navScrollRaf = requestAnimationFrame(() => {
+              updateNavOnScroll();
+              navScrollRaf = null;
+            });
+          }
+        }, { passive: true });
+
+        // Inicializar estado activo al cargar
+        updateNavOnScroll();
+      })();
+    </script>
+  </body>
+</html>
